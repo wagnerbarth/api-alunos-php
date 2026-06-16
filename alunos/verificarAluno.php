@@ -1,26 +1,9 @@
 <?php
 
-// Exemplo:
-// http://localhost:3000/alunos/verificarAluno.php?ra=1001
-
-// // cabeçalhos da API
-// header("Access-Control-Allow-Origin: *");
-// header("Access-Control-Allow-Headers: access");
-// header("Access-Control-Allow-Methods: GET");
-// header("Access-Control-Allow-Credentials: true");
-// header('Content-Type: application/json');
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Headers: Content-Type");
-header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
-
-if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
-    http_response_code(200);
-    exit();
-}
-
+require_once '../config/cors.php';
 // inclui a conexão com o banco de dados e a classe Aluno
-include_once '../config/database.php';
-include_once '../objects/aluno.php';
+require_once '../config/database.php';
+require_once '../objects/aluno.php';
 
 // obtém a conexão com o banco de dados
 $database = new Database();

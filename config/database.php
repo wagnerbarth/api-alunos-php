@@ -48,8 +48,8 @@ class Database{
     private $host = "localhost";
     private $db_name = "escola";
     private $username = "wagner";
-    private $password = "123456";
-    public $conn;
+    private $password = "Wagner@123456";
+    private ?PDO $conn;
 
     // estabelece a conexão com o banco de dados
     public function getConnection(){
